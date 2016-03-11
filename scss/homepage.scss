@@ -1,0 +1,33 @@
+@import 'reset';
+
+//mixin
+//背景图片
+@mixin background-image-set($img1x, $img2x) {
+    background-image: url($img1x);
+    background-image: -webkit-image-set(url($img1x) 1x, url($img2x) 2x);
+    background-image: -moz-image-set(url($img1x) 1x, url($img2x) 2x);
+    background-image: -o-image-set(url($img1x) 1x, url($img2x) 2x);
+    background-image: -ms-image-set(url($img1x) 1x, url($img2x) 2x);
+    background-repeat: no-repeat;
+}
+
+//圆角
+@mixin border-radius($value) {
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    border-radius: $value;
+}
+
+//高和宽
+@mixin dimension($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+
+.container {
+    width: 100%;
+}
+.remind{
+	display:none;
+}
