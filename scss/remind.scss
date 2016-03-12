@@ -1,3 +1,6 @@
+//  author:GuoWeihan
+//  date:2016/3/12
+
 @import 'reset';
 
 $left:left;
@@ -5,28 +8,36 @@ $right:right;
 $top:top;
 $bottom:bottom;
 
+// 设置margin大小
 $marginL:1px;
+// 设置padding大小
 $paddingL:1px;
+// 设置高宽大小
 $dimensionL:1px;
+// 设置文字大小
 $font:1px;
 
+//全部文字的颜色
 $wordColor:#54535d;
+//加粗的文字的颜色
 $strongColor:#96777b;
 //高和宽
 @mixin dimension($width, $height) {
     width: $width;
     height: $height;
 }
-
+// 对高版本浏览器显示的东西进行隐藏
 .container{
 	display:none;
 }
+// 外面div
 .remind{
 	@include dimension($dimensionL*600,auto);
 	text-align:center;
 	margin:0 auto;
 	margin-#{$top}:$marginL*200;
 	color:$wordColor;
+	// 标题
 	.r-title{
 		font-size: $font*19;
 		margin-#{$bottom}:$marginL*20; 
@@ -36,6 +47,7 @@ $strongColor:#96777b;
 			color: $strongColor;
 		}
 	}
+	// 内容部分
 	.r-intro{
 		text-align: left;
 		margin-#{$bottom}:30*$marginL;
