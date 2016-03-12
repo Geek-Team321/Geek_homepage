@@ -1,0 +1,39 @@
+div, html, body, ul, li, p, input, button, a, span, em, b, h1, h2, h3, h4, i, strong {
+  padding: 0;
+  margin: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: Verdana,"Lantinghei SC","Hiragino Sans GB",'Microsoft YaHei',Helvetica,arial,simsun,sans-serif; }
+
+ul {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+.container {
+  display: none; }
+
+.remind {
+  width: 600px;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 200px;
+  color: #54535d; }
+  .remind .r-title {
+    font-size: 19px;
+    margin-bottom: 20px; }
+    .remind .r-title strong {
+      font-size: 25px;
+      color: #96777b; }
+  .remind .r-intro {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 14px; }
+
+/*# sourceMappingURL=remind.css.map */

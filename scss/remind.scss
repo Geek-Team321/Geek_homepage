@@ -1,5 +1,44 @@
 @import 'reset';
 
+$left:left;
+$right:right;
+$top:top;
+$bottom:bottom;
+
+$marginL:1px;
+$paddingL:1px;
+$dimensionL:1px;
+$font:1px;
+
+$wordColor:#54535d;
+$strongColor:#96777b;
+//高和宽
+@mixin dimension($width, $height) {
+    width: $width;
+    height: $height;
+}
+
 .container{
 	display:none;
+}
+.remind{
+	@include dimension($dimensionL*600,auto);
+	text-align:center;
+	margin:0 auto;
+	margin-#{$top}:$marginL*200;
+	color:$wordColor;
+	.r-title{
+		font-size: $font*19;
+		margin-#{$bottom}:$marginL*20; 
+		strong{
+			// font-weight: normal;
+			font-size: 25*$font;
+			color: $strongColor;
+		}
+	}
+	.r-intro{
+		text-align: left;
+		margin-#{$bottom}:30*$marginL;
+		font-size: 14*$font;
+	}
 }
