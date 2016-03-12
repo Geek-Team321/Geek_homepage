@@ -33,6 +33,7 @@ $strongColor:#96777b;
 // 外面div
 .remind{
 	@include dimension($dimensionL*600,auto);
+	display:block;
 	text-align:center;
 	margin:0 auto;
 	margin-#{$top}:$marginL*200;

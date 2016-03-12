@@ -21,6 +21,7 @@ a {
 .remind {
   width: 600px;
   height: auto;
+  display: block;
   text-align: center;
   margin: 0 auto;
   margin-top: 200px;
