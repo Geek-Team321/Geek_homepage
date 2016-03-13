@@ -1,5 +1,4 @@
 @import 'reset';
-
 //mixin
 //背景图片
 @mixin background-image-set($img1x, $img2x) {
@@ -25,9 +24,285 @@
 }
 
 
+/**
+ * author: liufang
+ * date:  2016/3/12
+ * /
+
+
+/** 上面文字动画 */
+
+@-webkit-keyframes moveTop {
+    0% {
+        /* style */
+        opacity: 0;
+        margin-top: -36px;
+    }
+    50% {
+        opacity: .5;
+        margin-top: 0;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes moveTop {
+    0% {
+        /* style */
+        opacity: 0;
+        margin-top: -36px;
+    }
+    50% {
+        opacity: .5;
+        margin-top: 0;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes moveTop {
+    0% {
+        /* style */
+        opacity: 0;
+        margin-top: -36px;
+    }
+    50% {
+        opacity: .5;
+        margin-top: 0;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+    }
+}
+
+@-o-keyframes moveTop {
+    0% {
+        /* style */
+        opacity: 0;
+        margin-top: -36px;
+    }
+    50% {
+        opacity: .5;
+        margin-top: 0;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+    }
+}
+
+@keyframes moveTop {
+    0% {
+        /* style */
+        opacity: 0;
+        margin-top: -36px;
+    }
+    50% {
+        opacity: .5;
+        margin-top: 0;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+    }
+}
+
+
+/** 下面文字动画 */
+
+@-webkit-keyframes moveBottom {
+    0% {
+        /* style */
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+        margin-top: 36px;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@-moz-keyframes moveBottom {
+    0% {
+        /* style */
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+        margin-top: 36px;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@-ms-keyframes moveBottom {
+    0% {
+        /* style */
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+        margin-top: 36px;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@-o-keyframes moveBottom {
+    0% {
+        /* style */
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+        margin-top: 36px;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+@keyframes moveBottom {
+    0% {
+        /* style */
+        opacity: 0;
+    }
+    60% {
+        opacity: 0;
+        margin-top: 36px;
+    }
+    100% {
+        /* style */
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+
+/**
+ * 
+ * 左上角的三条白线和右边geek的白线
+ */
+
+@mixin whiteLine($width, $height) {
+    display: block;
+    width: $width;
+    height: $height;
+    background-color: #fff;
+}
+/** 添加transition */
+@mixin transition($num) {
+    -webkit-transition: $num;
+    -o-transition: $num;
+    transition: $num;
+}
+/** 添加动画 */
+@mixin addAnimate($animate) {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -webkit-animation: 1s $animate linear;
+    -moz-animation: 1s $animate linear;
+    -o-animation: 1s $animate linear;
+    -ms-animation: 1s $animate linear;
+}
+/** 背景图 */
+body {
+    @include background-image-set("../images/background-small.jpg", "../images/background.jpg");
+    background-color: #000;
+    background-size: 100% 100%;
+}
+/** 主体container */
 .container {
     width: 100%;
+    /* head banner 布局 */
+    .h-banner {
+        width: 80%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 36px;
+        margin: auto;
+        /* 上面两段文字 */
+        p {
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        /** 上面文字 */
+        p:first-of-type {
+            font-size: 24px;
+            @include addAnimate(moveTop);
+        }
+        /** 下面文字 */
+        p:last-of-type {
+            @include addAnimate(moveBottom);
+        }
+        /* 左上角按钮样式 */
+        .h-banner-btn {
+            box-sizing: border-box;
+            width: 20px;
+            padding: 1px 0 1px 0;
+            cursor: pointer;
+            z-index: 1000;
+            position: absolute;
+            @include transition(.3s);
+            /*按钮中白线*/
+            span {
+                @include whiteLine(100%, 2px);
+                margin-top: 4px;
+            }
+        }
+    }
+    /*footer 样式，右边的footer布局 */
+    .footer {
+        height: 100%;
+        width: 3vw;
+        position: absolute;
+        right: 0;
+        /*右边白线 */
+        span {
+            position: absolute;
+            @include whiteLine(100%, 1px);
+            top: 50%;
+            margin-top: -.5px;
+        }
+        /* 右边 GEEK 文字 */
+        span:before {
+            content: "G E E K";
+            color: #fff;
+            position: absolute;
+            margin-left: -57px;
+            font-size: 14px;
+            margin-top: -.5em;
+            -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+        }
+    }
 }
+
 .remind{
-	display:none;
+    display:none;
 }

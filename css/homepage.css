@@ -1,24 +1,393 @@
-div, html, body, ul, li, p, input, button, a, span, em, b, h1, h2, h3, h4, i, strong {
+@charset "UTF-8";
+/* line 13, ../scss/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
   padding: 0;
-  margin: 0; }
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 
+/* line 22, ../scss/_reset.scss */
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+}
 
+/* line 27, ../scss/_reset.scss */
 body {
-  font-family: Verdana,"Lantinghei SC","Hiragino Sans GB",'Microsoft YaHei',Helvetica,arial,simsun,sans-serif; }
+  font-family: Verdana,"Lantinghei SC","Hiragino Sans GB",'Microsoft YaHei',Helvetica,arial,simsun,sans-serif;
+  width: 100%;
+  height: 100%;
+}
 
+/* line 32, ../scss/_reset.scss */
 ul {
-  list-style: none; }
+  list-style: none;
+}
 
+/* line 35, ../scss/_reset.scss */
 a {
   text-decoration: none;
-  color: #000; }
+  color: #000;
+}
 
+/**
+ * author: liufang
+ * date:  2016/3/12
+ * [whiteLine description]
+ * 
+ * @param  {[type]} $width  [description]
+ * @param  {[type]} $height [description]
+ * @return {[type]}         [description]
+ */
+/** 上面文字动画 */
+@-webkit-keyframes moveTop {
+  /* line 41, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+    margin-top: -36px;
+  }
+
+  /* line 46, ../scss/homepage.scss */
+  50% {
+    opacity: .5;
+    margin-top: 0;
+  }
+
+  /* line 50, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes moveTop {
+  /* line 57, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+    margin-top: -36px;
+  }
+
+  /* line 62, ../scss/homepage.scss */
+  50% {
+    opacity: .5;
+    margin-top: 0;
+  }
+
+  /* line 66, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes moveTop {
+  /* line 73, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+    margin-top: -36px;
+  }
+
+  /* line 78, ../scss/homepage.scss */
+  50% {
+    opacity: .5;
+    margin-top: 0;
+  }
+
+  /* line 82, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+  }
+}
+
+@-o-keyframes moveTop {
+  /* line 89, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+    margin-top: -36px;
+  }
+
+  /* line 94, ../scss/homepage.scss */
+  50% {
+    opacity: .5;
+    margin-top: 0;
+  }
+
+  /* line 98, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+  }
+}
+
+@keyframes moveTop {
+  /* line 105, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+    margin-top: -36px;
+  }
+
+  /* line 110, ../scss/homepage.scss */
+  50% {
+    opacity: .5;
+    margin-top: 0;
+  }
+
+  /* line 114, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+  }
+}
+
+/** 下面文字动画 */
+@-webkit-keyframes moveBottom {
+  /* line 123, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+  }
+
+  /* line 127, ../scss/homepage.scss */
+  60% {
+    opacity: 0;
+    margin-top: 36px;
+  }
+
+  /* line 132, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@-moz-keyframes moveBottom {
+  /* line 140, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+  }
+
+  /* line 144, ../scss/homepage.scss */
+  60% {
+    opacity: 0;
+    margin-top: 36px;
+  }
+
+  /* line 149, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@-ms-keyframes moveBottom {
+  /* line 157, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+  }
+
+  /* line 161, ../scss/homepage.scss */
+  60% {
+    opacity: 0;
+    margin-top: 36px;
+  }
+
+  /* line 166, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@-o-keyframes moveBottom {
+  /* line 174, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+  }
+
+  /* line 178, ../scss/homepage.scss */
+  60% {
+    opacity: 0;
+    margin-top: 36px;
+  }
+
+  /* line 183, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@keyframes moveBottom {
+  /* line 191, ../scss/homepage.scss */
+  0% {
+    /* style */
+    opacity: 0;
+  }
+
+  /* line 195, ../scss/homepage.scss */
+  60% {
+    opacity: 0;
+    margin-top: 36px;
+  }
+
+  /* line 200, ../scss/homepage.scss */
+  100% {
+    /* style */
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+/**
+ * [whiteLine description]
+ * 左上角的三条白线和右边geek的白线
+ * @param  {[type]} $width  [description]
+ * @param  {[type]} $height [description]
+ * @return {[type]}         [description]
+ */
+/* line 240, ../scss/homepage.scss */
+body {
+  background-image: url("../images/background-small.jpg");
+  background-image: -webkit-image-set(url("../images/background-small.jpg") 1x, url("../images/background.jpg") 2x);
+  background-image: -moz-image-set(url("../images/background-small.jpg") 1x, url("../images/background.jpg") 2x);
+  background-image: -o-image-set(url("../images/background-small.jpg") 1x, url("../images/background.jpg") 2x);
+  background-image: -ms-image-set(url("../images/background-small.jpg") 1x, url("../images/background.jpg") 2x);
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-size: 100% 100%;
+}
+
+/* line 246, ../scss/homepage.scss */
 .container {
-  width: 100%; }
+  width: 100%;
+  /* head banner 布局 */
+  /*footer 样式，右边的footer布局 */
+}
+/* line 249, ../scss/homepage.scss */
+.container .h-banner {
+  width: 80%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 36px;
+  margin: auto;
+  /* 上面两段文字 */
+  /* 左上角按钮样式 */
+}
+/* line 257, ../scss/homepage.scss */
+.container .h-banner p {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+/* line 264, ../scss/homepage.scss */
+.container .h-banner p:first-of-type {
+  font-size: 24px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -webkit-animation: 1s moveTop linear;
+  -moz-animation: 1s moveTop linear;
+  -o-animation: 1s moveTop linear;
+  -ms-animation: 1s moveTop linear;
+}
+/* line 268, ../scss/homepage.scss */
+.container .h-banner p:last-of-type {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -webkit-animation: 1s moveBottom linear;
+  -moz-animation: 1s moveBottom linear;
+  -o-animation: 1s moveBottom linear;
+  -ms-animation: 1s moveBottom linear;
+}
+/* line 272, ../scss/homepage.scss */
+.container .h-banner .h-banner-btn {
+  box-sizing: border-box;
+  width: 20px;
+  padding: 1px 0 1px 0;
+  cursor: pointer;
+  z-index: 1000;
+  position: absolute;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  /*按钮中白线*/
+}
+/* line 281, ../scss/homepage.scss */
+.container .h-banner .h-banner-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  margin-top: 4px;
+}
+/* line 288, ../scss/homepage.scss */
+.container .footer {
+  height: 100%;
+  width: 3vw;
+  position: absolute;
+  right: 0;
+  /*右边白线 */
+  /* 右边 GEEK 文字 */
+}
+/* line 294, ../scss/homepage.scss */
+.container .footer span {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  top: 50%;
+  margin-top: -.5px;
+}
+/* line 301, ../scss/homepage.scss */
+.container .footer span:before {
+  content: "G E E K";
+  color: #fff;
+  position: absolute;
+  margin-left: -57px;
+  font-size: 14px;
+  margin-top: -.5em;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
 
-.remind {
-  display: none; }
-
-/*# sourceMappingURL=homepage.css.map */
+.remind{
+  display:none;
+}
